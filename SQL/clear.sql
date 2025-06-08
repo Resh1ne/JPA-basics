@@ -1,0 +1,20 @@
+DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS personal_infos;
+DROP TABLE IF EXISTS employees;
+DROP TABLE IF EXISTS departments;
+DROP TABLE IF EXISTS students_sections;
+DROP TABLE IF EXISTS students;
+DROP TABLE IF EXISTS sections;
+DROP TABLE IF EXISTS masters;
+DROP TABLE IF EXISTS teachers;
+DROP TABLE IF EXISTS persons;
+
+/*----------CLEAR ALL
+TRUNCATE users CASCADE;
+TRUNCATE personal_infos CASCADE;
+TRUNCATE employees CASCADE;
+TRUNCATE departments CASCADE;
+TRUNCATE students_sections CASCADE;
+TRUNCATE sections CASCADE;
+TRUNCATE students CASCADE;
+*/
