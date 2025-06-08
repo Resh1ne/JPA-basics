@@ -1,11 +1,11 @@
-package org.example;
+package org.example.demo;
 
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
 import jakarta.persistence.TypedQuery;
-import org.example.entity.User;
+import org.example.demo.User;
 
 import java.util.List;
 
