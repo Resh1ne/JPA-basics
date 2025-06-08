@@ -4,26 +4,26 @@ import jakarta.persistence.EntityManager;
 
 import java.util.List;
 
-public class UserRepositoryImpl implements UserRepository {
-    public static final String GET_ALL = "from User";
+public class DemoRepositoryImpl implements DemoRepository {
+    public static final String GET_ALL = "from Demo";
     private final EntityManager manager;
 
-    public UserRepositoryImpl(EntityManager manager) {
+    public DemoRepositoryImpl(EntityManager manager) {
         this.manager = manager;
     }
 
     @Override
-    public User find(Long key) {
-        return manager.find(User.class, key);
+    public Demo find(Long key) {
+        return manager.find(Demo.class, key);
     }
 
     @Override
-    public List<User> findAll() {
-        return manager.createQuery(GET_ALL, User.class).getResultList();
+    public List<Demo> findAll() {
+        return manager.createQuery(GET_ALL, Demo.class).getResultList();
     }
 
     @Override
-    public void save(User entity) {
+    public void save(Demo entity) {
         manager.getTransaction().begin();
         if (entity.getId() == null) {
             manager.persist(entity);
@@ -36,7 +36,7 @@ public class UserRepositoryImpl implements UserRepository {
     @Override
     public boolean delete(Long key) {
         manager.getTransaction().begin();
-        User entity = manager.find(User.class, key);
+        Demo entity = manager.find(Demo.class, key);
         if (entity == null) {
             return false;
         }

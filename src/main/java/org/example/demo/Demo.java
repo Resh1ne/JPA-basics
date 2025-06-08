@@ -11,7 +11,7 @@ import java.util.Objects;
 
 @Entity
 @Table(name = "users")
-public class User {
+public class Demo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
@@ -26,8 +26,8 @@ public class User {
         if (this == object) return true;
         if (object == null || getClass() != object.getClass()) return false;
         if (!super.equals(object)) return false;
-        User user = (User) object;
-        return Objects.equals(id, user.id) && Objects.equals(login, user.login) && Objects.equals(password, user.password);
+        Demo demo = (Demo) object;
+        return Objects.equals(id, demo.id) && Objects.equals(login, demo.login) && Objects.equals(password, demo.password);
     }
 
     public int hashCode() {

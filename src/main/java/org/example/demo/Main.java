@@ -5,7 +5,6 @@ import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
 import jakarta.persistence.TypedQuery;
-import org.example.demo.User;
 
 import java.util.List;
 
@@ -18,32 +17,32 @@ public class Main {
         EntityManager manager = factory.createEntityManager();
         try {
             //READ
-            User user = manager.find(User.class, 2L);
-            System.out.println(user);
+            Demo demo = manager.find(Demo.class, 2L);
+            System.out.println(demo);
 
             //READ ALL
-            TypedQuery<User> query = manager.createQuery("from User", User.class);
-            List<User> users = query.getResultList();
-            users.forEach(System.out::println);
+            TypedQuery<Demo> query = manager.createQuery("from Demo", Demo.class);
+            List<Demo> demos = query.getResultList();
+            demos.forEach(System.out::println);
 
             //CREATE
             manager.getTransaction().begin();
-            User userCreate = new User();
-            userCreate.setLogin("login1");
-            userCreate.setPassword("password1");
-            manager.persist(userCreate);
+            Demo demoCreate = new Demo();
+            demoCreate.setLogin("login1");
+            demoCreate.setPassword("password1");
+            manager.persist(demoCreate);
             manager.getTransaction().commit();
-            System.out.println(userCreate);
+            System.out.println(demoCreate);
 
             //UPDATE
             manager.getTransaction().begin();
-            userCreate.setPassword("password2");
+            demoCreate.setPassword("password2");
             manager.getTransaction().commit();
 
             //DELETE
             manager.getTransaction().begin();
-            User userDelete = manager.find(User.class, 2L);
-            manager.remove(userDelete);
+            Demo demoDelete = manager.find(Demo.class, 2L);
+            manager.remove(demoDelete);
             manager.getTransaction().commit();
 
         } catch (Exception e) {
