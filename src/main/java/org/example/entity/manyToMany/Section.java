@@ -73,7 +73,6 @@ public class Section {
         return "Section{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", students=" + students +
                 '}';
     }
 }
