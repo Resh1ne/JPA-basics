@@ -67,4 +67,13 @@ public class Section {
     public int hashCode() {
         return Objects.hash(id, name, students);
     }
+
+    @Override
+    public String toString() {
+        return "Section{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", students=" + students +
+                '}';
+    }
 }

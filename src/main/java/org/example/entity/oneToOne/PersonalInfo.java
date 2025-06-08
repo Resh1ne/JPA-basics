@@ -93,4 +93,16 @@ public class PersonalInfo {
     public int hashCode() {
         return Objects.hash(id, email, firstName, lastName, phoneNumber, user);
     }
+
+    @Override
+    public String toString() {
+        return "PersonalInfo{" +
+                "id=" + id +
+                ", email='" + email + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                ", user=" + user +
+                '}';
+    }
 }
